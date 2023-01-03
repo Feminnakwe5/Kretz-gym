@@ -1,0 +1,10 @@
+body {
+  background-image: url('/Purple-color-theory.jpg');
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.container {
+  background-color: antiquewhite;
+  display: grid;
+}
