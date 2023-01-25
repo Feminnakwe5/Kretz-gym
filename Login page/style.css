@@ -1,11 +1,19 @@
 body {
-  background-image: url('/Purple-color-theory.jpg');
+  background: url('/images/Purple-color-theory.jpg');
   background-size: cover;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  /* grid-template-rows: repeat(12, 1fr); */
+  display: flex;
 }
 .container {
-  background-color: antiquewhite;
-  display: grid;
+  margin: 50px auto;
+  background-color: #ffffff;
+  width: 40%;
+  text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input {
+  margin-top: 40px;
 }
