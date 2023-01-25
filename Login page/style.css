@@ -8,6 +8,7 @@ body {
   background-color: #ffffff;
   width: 40%;
   text-align: center;
+  padding-bottom: 150px;
 }
 form {
   display: flex;
@@ -32,4 +33,15 @@ a {
 }
 span {
   color: #6e53dd;
+}
+
+/* mobile */
+@media only screen and (max-width: 768px) {
+  a {
+    /* display: inline; */
+    padding: 5px 40px;
+  }
+  input {
+    width: 120px;
+  }
 }
