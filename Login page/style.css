@@ -16,4 +16,20 @@ form {
 }
 input {
   margin-top: 40px;
+  width: 250px;
+  padding: 8px;
+}
+
+a {
+  margin-top: 30px;
+  display: inline-block;
+  text-decoration: none;
+  /* border: 1px solid black; */
+  padding: 10px 80px;
+  background: #9c78a1;
+  color: black;
+  border-radius: 10px;
+}
+span {
+  color: #6e53dd;
 }
