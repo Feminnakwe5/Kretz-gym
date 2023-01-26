@@ -17,7 +17,7 @@ signBtn.addEventListener('click', (e) => {
   // postNewUser(newUuid, newUser);
   postUser(newUser);
   resetForm();
-  location.replace('login.html');
+  location.replace('/login.html');
 });
 
 // read form value data
@@ -37,7 +37,7 @@ const postUser = (user) =>
     headers: {
       'content-type': 'application/json',
     },
-    body: JSON.stringify(user),
+    body: JSON.stringify(...user),
   });
 
 // reset form
