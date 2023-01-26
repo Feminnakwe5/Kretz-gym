@@ -22,19 +22,33 @@
       <div class="profile">
         <img src="/images/post 1.png" alt="profile img" />
         <div>
-          <ul>
-            <li>work schedule</li>
-            <li>bench-press</li>
-            <li>arms</li>
-            <li>push ups</li>
-            <li>legs</li>
-          </ul>
-          <p>
-            Quote of the day: It okay to make mistakes, we always do, but its
-            never okay to give-up
-          </p>
-          <button>Upload image</button>
-          <button>post</button>
+          <form>
+            <label for="first">workout</label>
+            <select name="status" id="first">
+              <option value="Pending Task">Planks</option>
+              <option value="Active Task">push ups</option>
+              <option value="Done Task">Sit-ups</option>
+            </select>
+            <input type="text" name="work-out" id="first" />
+            <label for="second">workout</label>
+            <select name="status" id="second">
+              <option value="Pending Task">Planks</option>
+              <option value="Active Task">push ups</option>
+              <option value="Done Task">Sit-ups</option>
+            </select>
+            <input type="text" name="work-out" id="second" />
+            <label for="third">workout</label>
+            <select name="status" id="third">
+              <option value="Pending Task">Planks</option>
+              <option value="Active Task">push ups</option>
+              <option value="Done Task">Sit-ups</option>
+            </select>
+            <input type="text" name="work-out" id="third" />
+            <label for="Quote">Quote</label>
+            <input type="text" name="work-out" id="Quote" />
+            <button>Upload image</button>
+            <button>post</button>
+          </form>
         </div>
       </div>
       <!-- div for workout plans  -->
@@ -65,5 +79,6 @@
         </div>
       </div>
     </div>
+    <script src="dash.js"></script>
   </body>
 </html>

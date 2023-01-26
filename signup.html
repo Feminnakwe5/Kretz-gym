@@ -13,20 +13,31 @@
         <h1>K</h1>
         <h2>Sign Up</h2>
         <div class="form">
-          <form action="post">
-            <input type="text" aria-label="username" placeholder="Username" />
-            <input type="email" aria-label="user email" placeholder="Email" />
+          <form>
+            <input 
+              type="text"
+              aria-label="username"
+              placeholder="Username" 
+              id="sign-up-name"/>
+            <input 
+              type="email" 
+              aria-label="user email" 
+              placeholder="Email" 
+              id="sign-up-email"/>
             <input
               type="password"
               aria-label="user password"
               placeholder="Password"
+              id="sign-up-password"
             />
+            <button class="login-btn" id="login-btn">Sign Up</button>
           </form>
         </div>
-        <a class="login-btn" href="#">Sign Up</a>
+        <div>
         <p>Already have an account? <span>Login</span></p>
       </div>
     </div>
     <!-- <script> </script> -->
+    <script src="singup.js"></script>
   </body>
 </html>
