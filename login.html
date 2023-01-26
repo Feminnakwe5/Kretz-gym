@@ -14,18 +14,26 @@
         <h2>LOGIN</h2>
         <div class="form">
           <form action="post">
-            <input type="email" aria-label="user email" placeholder="Email" />
+            <input
+              type="text"
+              aria-label="username"
+              placeholder="Username"
+              id="login-username"
+            />
             <input
               type="password"
               aria-label="user password"
               placeholder="Password"
+              id="login-password"
             />
+            <button class="login-btn" href="#">Login</button>
           </form>
         </div>
-        <a class="login-btn" href="#">Login</a>
+
         <p>Don't have an account? <span>Sign Up</span></p>
       </div>
     </div>
     <!-- <script> </script> -->
+    <script src="login.js"></script>
   </body>
 </html>
