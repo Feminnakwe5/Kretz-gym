@@ -1,0 +1,54 @@
+{
+  "user": {
+    "femi": {
+      "username": "feminnakwe",
+      "email": "fate@gmail.com",
+      "password": "peanutButter25"
+    },
+    "trevor": {
+      "username": "Trevorgt",
+      "email": "onePiece@gmail.com",
+      "password": "GearSecond"
+    },
+    "karen": {
+      "username": "Karenzoro",
+      "email": "hairbraids@gmail.com",
+      "password": "Max2845"
+    },
+    "erica": {
+      "username": "Ericakaido",
+      "email": "wano@gmail.com",
+      "password": "ichigobankai"
+    }
+  },
+  "posts": {
+    "uuid1": {
+      "picture": "url(blablabla)",
+      "planks": "45",
+      "pushups": "60",
+      "situps": "70",
+      "quote": "in luffy we trust"
+    },
+    "uuid2": {
+      "picture": "url(blablabla)",
+      "planks": "45",
+      "pushups": "60",
+      "situps": "70",
+      "quote": "in zoro we trust"
+    },
+    "uuid3": {
+      "picture": "url(blablabla)",
+      "planks": "45",
+      "pushups": "60",
+      "situps": "70",
+      "quote": "in eren we trust"
+    },
+    "uuid4": {
+      "picture": "url(blablabla)",
+      "planks": "45",
+      "pushups": "60",
+      "situps": "70",
+      "quote": "in sansiba we trust"
+    }
+  }
+}
