@@ -9,7 +9,7 @@ const submitBtn = document.getElementById('login-btn');
 const getUser = (user) => fetch(`${USER_URL}/${user.username}${EXT}`);
 
 function browserValidation() {
-  if (!password.value || password.value.length < 5) {
+  if (!loginPassWord.value || loginPassWord.value.length < 5) {
     return 'password failed';
   }
   return null;
@@ -44,7 +44,7 @@ async function handleLoginSubmit(e) {
         'userInfo',
         JSON.stringify(userInformationInDatabase)
       );
-      location.replace('dash.html');
+      location.replace('/dash.html');
     }
   } catch (error) {
     alert(error);
