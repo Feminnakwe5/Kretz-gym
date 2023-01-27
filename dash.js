@@ -63,24 +63,26 @@ function appendNewRecord(uuid, workout) {
   const plans = document.getElementById('plans');
 
   const create = `
-<div id ='${uuid}'> 
-<label>Arms: 
-    <input type="text" value="${workout.arms}" readonly />
-		</label>
-<label>Legs: 
-    <input type="text" value="${workout.legs}" readonly />
-		</label>
-  <label>Upperbody: 
-    <input type="text" value="${workout.upperBody}" readonly />
-		</label>
-  <label>Cardio: 
-    <input type="text" value="${workout.cardio}" readonly />
-		</label>
-  <label>Quote: 
-    <input type="text" value="${workout.quote}" readonly />
-		</label>
-  <button onclick="deletept(this)" class="deleteBtn" type="submit">Delete</button>
-    <button onclick="edit(this)" class="editBtn" type="button">Edit</button>
+<div id='post'>
+ <div id ='${uuid} post-er' > 
+ <label>Arms: 
+     <input type="text" value="${workout.arms}" readonly />
+   </label>
+ <label>Legs: 
+     <input type="text" value="${workout.legs}" readonly />
+   </label>
+   <label>Upperbody: 
+     <input type="text" value="${workout.upperBody}" readonly />
+   </label>
+   <label>Cardio: 
+     <input type="text" value="${workout.cardio}" readonly />
+   </label>
+   <label>Quote: 
+     <input type="text" value="${workout.quote}" readonly />
+   </label>
+   <button onclick="deletept(this)" class="deleteBtn" type="submit">Delete</button>
+     <button onclick="edit(this)" class="editBtn" type="button">Edit</button>
+ </div>
 </div>
 `;
   plans.innerHTML += create;

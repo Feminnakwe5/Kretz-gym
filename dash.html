@@ -13,14 +13,18 @@
       <nav>
         <ul class="nav-ul">
           <li>K</li>
-          <li><img class="nav-icon" src="/images/home icon.jpeg" /></li>
+          <li>
+            <a href="/home.html"
+              ><img class="nav-icon" src="/images/home icon.jpeg"
+            /></a>
+          </li>
           <li><img class="nav-icon" src="/images/bell icon.png" /></li>
           <li><img class="nav-icon" src="/images/people icon.png" /></li>
         </ul>
       </nav>
       <!-- div for profile image and work out -->
       <div class="profile">
-        <img src="/images/post 1.png" alt="profile img" />
+        <img src="/images/post 1.png" alt="profile img" class="profile" />
         <div>
           <form
             action=""
@@ -29,12 +33,13 @@
           >
             <h1>WHAT WORK OUTS DID YOU DO TODAY</h1>
             <label for="arms">
-              Arms:
+              Arms
               <input
                 type="text"
                 name="arms"
                 id="arms"
                 class="form-input"
+                placeholder="what was your routine?"
                 required
               />
             </label>
@@ -45,6 +50,7 @@
                 name="lowerbody"
                 id="legs"
                 class="form-input"
+                placeholder="what was your routine?"
                 required
               />
             </label>
@@ -55,6 +61,7 @@
                 name="upperbody"
                 id="upperbody"
                 class="form-input"
+                placeholder="what was your routine?"
                 required
               />
             </label>
@@ -65,6 +72,7 @@
                 name="cardio"
                 id="cardio"
                 class="form-input"
+                placeholder="what was your routine?"
                 required
               />
             </label>
@@ -75,11 +83,12 @@
                 name="Quote"
                 id="Quote"
                 class="form-input"
+                placeholder="you can do it "
                 required
               />
             </label>
             <button id="submit-btn">Submit</button>
-            <input type="file" value="image" />
+            <input type="file" value="image" class="file" />
           </form>
         </div>
       </div>

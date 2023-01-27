@@ -12,7 +12,6 @@ let signBtn = document.getElementById('login-btn');
 signBtn.addEventListener('click', (e) => {
   e.stopPropagation();
   e.preventDefault();
-  debugger;
   let newUser = readFormData();
   let newUUID = generateUUID();
   postNewUser(newUUID, newUser);
