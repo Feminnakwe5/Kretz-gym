@@ -12,14 +12,18 @@ let signBtn = document.getElementById('login-btn');
 signBtn.addEventListener('click', (e) => {
   e.stopPropagation();
   e.preventDefault();
+  debugger;
   let newUser = readFormData();
-  postUser(newUser);
-  location.replace('/login.html');
+  let newUUID = generateUUID();
+  postNewUser(newUUID, newUser);
+  setTimeout(function home() {
+    location.replace('/login.html');
+  }, 3000);
 });
 
 // read form value data
 function readFormData() {
-  let newUser = {
+  const newUser = {
     username: signName.value,
     email: signEmail.value,
     password: signPassWord.value,
@@ -27,23 +31,19 @@ function readFormData() {
   return newUser;
 }
 
-// add form data to database
-function postUser(user) {
-  fetch(`${USER_URL}${EXT}`, {
+// add form data to database to create new user
+function postNewUser(uuid, user) {
+  fetch(`${USER_URL}/${uuid}${EXT}`, {
     method: 'put',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ user }),
+    body: JSON.stringify(user),
   })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      console.log(USER_URL);
+    .then((resp) => {
+      resp.json();
     })
-    .catch((error) => {
-      console.log(error);
-    });
+    .then((data) => console.log('data', data));
 }
 
 // reset form
@@ -54,9 +54,6 @@ function resetForm() {
 }
 
 // generate new uuid
-// function generateUUID() {
-//   return (
-//     Math.random().toString(36).substring(2, 15) +
-//     Math.random().toString(36).substring(2, 15)
-//   );
-// }
+function generateUUID() {
+  return signName.value;
+}
