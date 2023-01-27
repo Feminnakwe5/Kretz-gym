@@ -9,6 +9,7 @@ body {
   width: 40%;
   text-align: center;
   padding-bottom: 150px;
+  border-radius: 10px;
 }
 form {
   display: flex;
@@ -22,17 +23,19 @@ input {
 }
 
 a {
-  margin-top: 30px;
-  display: inline-block;
   text-decoration: none;
-  /* border: 1px solid black; */
+}
+span {
+  color: #6e53dd;
+}
+.login-btn {
+  padding: 5px 20px;
+  margin-top: 20px;
   padding: 10px 80px;
   background: #9c78a1;
   color: black;
   border-radius: 10px;
-}
-span {
-  color: #6e53dd;
+  border: none;
 }
 
 /* mobile */
