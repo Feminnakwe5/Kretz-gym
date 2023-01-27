@@ -13,10 +13,7 @@ signBtn.addEventListener('click', (e) => {
   e.stopPropagation();
   e.preventDefault();
   let newUser = readFormData();
-  // let newUuid = generateUUID();
-  // postNewUser(newUuid, newUser);
   postUser(newUser);
-  resetForm();
   location.replace('/login.html');
 });
 
@@ -31,14 +28,23 @@ function readFormData() {
 }
 
 // add form data to database
-const postUser = (user) =>
-  fetch(`${USERS_URL}${EXT}`, {
-    method: 'post',
+function postUser(user) {
+  fetch(`${USER_URL}${EXT}`, {
+    method: 'put',
     headers: {
-      'content-type': 'application/json',
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify(...user),
-  });
+    body: JSON.stringify({ user }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      console.log(USER_URL);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
 
 // reset form
 function resetForm() {
