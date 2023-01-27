@@ -22,61 +22,72 @@
       <div class="profile">
         <img src="/images/post 1.png" alt="profile img" />
         <div>
-          <form>
-            <label for="first">workout</label>
-            <select name="status" id="first">
-              <option value="Pending Task">Planks</option>
-              <option value="Active Task">push ups</option>
-              <option value="Done Task">Sit-ups</option>
-            </select>
-            <input type="text" name="work-out" id="first" />
-            <label for="second">workout</label>
-            <select name="status" id="second">
-              <option value="Pending Task">Planks</option>
-              <option value="Active Task">push ups</option>
-              <option value="Done Task">Sit-ups</option>
-            </select>
-            <input type="text" name="work-out" id="second" />
-            <label for="third">workout</label>
-            <select name="status" id="third">
-              <option value="Pending Task">Planks</option>
-              <option value="Active Task">push ups</option>
-              <option value="Done Task">Sit-ups</option>
-            </select>
-            <input type="text" name="work-out" id="third" />
-            <label for="Quote">Quote</label>
-            <input type="text" name="work-out" id="Quote" />
-            <button>Upload image</button>
-            <button>post</button>
+          <form
+            action=""
+            onsubmit="event.preventDefault(); handleFormSubmit()"
+            autocomplete="off"
+          >
+            <h1>WHAT WORK OUTS DID YOU DO TODAY</h1>
+            <label for="arms">
+              Arms:
+              <input
+                type="text"
+                name="arms"
+                id="arms"
+                class="form-input"
+                required
+              />
+            </label>
+            <label for="legs">
+              lower body
+              <input
+                type="text"
+                name="lowerbody"
+                id="legs"
+                class="form-input"
+                required
+              />
+            </label>
+            <label for="upperbody">
+              Upperbody
+              <input
+                type="text"
+                name="upperbody"
+                id="upperbody"
+                class="form-input"
+                required
+              />
+            </label>
+            <label for="cardio">
+              Cardio
+              <input
+                type="text"
+                name="cardio"
+                id="cardio"
+                class="form-input"
+                required
+              />
+            </label>
+            <label for="Quote">
+              Quote of the day
+              <input
+                type="text"
+                name="Quote"
+                id="Quote"
+                class="form-input"
+                required
+              />
+            </label>
+            <input type="submit" value="Submit" />
+            <input type="file" value="image" />
           </form>
         </div>
       </div>
       <!-- div for workout plans  -->
       <div class="plans">
-        <div>
-          Work out plans
-          <ul>
-            <li><img src="/images/Group 447plan 2.png" alt="" /></li>
-            <li><img src="/images/Group 449plan 1.png" alt="" /></li>
-            <li><img src="/images/plan 3.png" alt="" /></li>
-          </ul>
-        </div>
-        <div>
-          Discover
-          <ul>
-            <li><img src="/images/discover1.png" alt="" /></li>
-            <li><img src="/images/discover 2.png" alt="" /></li>
-            <li><img src="/images/discover 3.png" alt="" /></li>
-          </ul>
-        </div>
-        <div>
-          On demand
-          <ul>
-            <li><img src="/images/on demand 1.png" alt="" /></li>
-            <li><img src="/images/on demand 2.png" alt="" /></li>
-            <li><img src="/images/on demand 3.png" alt="" /></li>
-          </ul>
-        </div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
     <script src="dash.js"></script>
