@@ -3,9 +3,10 @@ const USER_URL = 'https://crud-fed-default-rtdb.firebaseio.com/user';
 const EXT = '.json';
 // form inputs
 let loginName = document.getElementById('login-username');
-let loginPassWord = document.getElementById('login - password');
+let loginPassWord = document.getElementById('login-password');
+const submitBtn = document.getElementById('login-btn');
 
-const getUser = (user) => fetch(`${USERS_URL}/${user.username}${EXT}`);
+const getUser = (user) => fetch(`${USER_URL}/${user.username}${EXT}`);
 
 function browserValidation() {
   if (!password.value || password.value.length < 5) {
@@ -14,7 +15,6 @@ function browserValidation() {
   return null;
 }
 
-const submitBtn = document.getElementById('submitBtn');
 submitBtn.addEventListener('click', handleLoginSubmit);
 
 async function handleLoginSubmit(e) {
@@ -22,8 +22,8 @@ async function handleLoginSubmit(e) {
   e.stopPropagation();
 
   const user = {
-    username: username.value,
-    password: password.value,
+    username: loginName.value,
+    password: loginPassWord.value,
   };
   try {
     const validationError = browserValidation();
