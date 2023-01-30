@@ -29,7 +29,7 @@ function readFormData() {
     legs: legs.value,
     upperBody: upperBody.value,
     cardio: cardio.value,
-    Quote: Quote.value,
+    quote: Quote.value,
   };
   return gym;
 }
@@ -63,47 +63,29 @@ function appendNewRecord(uuid, workout) {
   const plans = document.getElementById('plans');
 
   const create = `
-<div id='post'>
- <div id ='${uuid} post-er' > 
- <label>Arms: 
-     <input type="text" value="${workout.arms}" readonly />
-   </label>
- <label>Legs: 
-     <input type="text" value="${workout.legs}" readonly />
-   </label>
-   <label>Upperbody: 
-     <input type="text" value="${workout.upperBody}" readonly />
-   </label>
-   <label>Cardio: 
-     <input type="text" value="${workout.cardio}" readonly />
-   </label>
-   <label>Quote: 
-     <input type="text" value="${workout.quote}" readonly />
-   </label>
-   <button onclick="deletept(this)" class="deleteBtn" type="submit">Delete</button>
-     <button onclick="edit(this)" class="editBtn" type="button">Edit</button>
- </div>
-</div>
-`;
+  <div id='post'>
+  <div id ='${uuid}' class="post-er" > 
+  <label>Arms: 
+      <input type="text" value="${workout.arms}" readonly />
+    </label>
+  <label>Legs: 
+      <input type="text" value="${workout.legs}" readonly />
+    </label>
+    <label>Upperbody: 
+      <input type="text" value="${workout.upperBody}" readonly />
+    </label>
+    <label>Cardio: 
+      <input type="text" value="${workout.cardio}" readonly />
+    </label>
+    <label>Quote: 
+      <input type="text" value="${workout.quote}" readonly />
+    </label>
+    <button onclick="deletepost(this)" class="deleteBtn" type="submit">Delete</button>
+      <button onclick="edit(this)" class="editBtn" type="button">Edit</button>
+  </div>
+  </div>
+  `;
   plans.innerHTML += create;
-}
-
-// ********Delete
-function deletept(btn) {
-  const current = btn.parentElement;
-  const currentUUID = current.id;
-  // console.log(currentUUID);
-
-  fetch(`${POST_URL}/${currentUUID}${EXT}`, {
-    method: 'delete',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((resp) => resp.json())
-    .then((data) => console.log(data));
-
-  current.remove();
 }
 
 // *********UPDATE/EDIT******
@@ -111,7 +93,6 @@ function edit(btn) {
   const current = btn.parentElement;
   const currentUUID = current.id;
   const InfoArr = current.querySelectorAll('input');
-
   let updatedWorkOut = null;
 
   const isEdit = btn.innerHTML.toUpperCase();
@@ -120,7 +101,7 @@ function edit(btn) {
     InfoArr.forEach((field) => field.removeAttribute('readonly'));
     // console.log('editing', petInfoArr);
   } else {
-    btn.innerHTML = 'edit';
+    btn.innerHTML = 'EDIT';
     InfoArr.forEach((field) => field.setAttribute('readonly', 'readonly'));
     // console.log('saving start', petInfoArr);
     updatedWorkOut = {
@@ -138,13 +119,31 @@ function edit(btn) {
 // UPDATE FIREBASE
 function updateRecord(uuid, workout) {
   fetch(`${POST_URL}/${uuid}${EXT}`, {
-    method: 'patch',
-    // method: 'put',
+    // method: 'patch',
+    method: 'put',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(workout),
   });
+}
+
+// ********Delete
+function deletepost(btn) {
+  const current = btn.parentElement;
+  const currentUUID = current.id;
+  console.log(currentUUID);
+
+  fetch(`${POST_URL}/${currentUUID}${EXT}`, {
+    method: 'delete',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((resp) => resp.json())
+    .then((data) => console.log(data));
+
+  current.remove();
 }
 
 // generate new uuid
