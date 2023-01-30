@@ -2,6 +2,8 @@ const POST_URL = 'https://crud-fed-default-rtdb.firebaseio.com/posts';
 const USER_URL = 'https://crud-fed-default-rtdb.firebaseio.com/user';
 const EXT = '.json';
 
+window.addEventListener('load', getInfo());
+
 // form value
 let arms = document.getElementById('arms');
 let legs = document.getElementById('legs');
@@ -21,6 +23,22 @@ submitBtn.addEventListener('click', (e) => {
   appendNewRecord(newUUID, newWorkOut);
   resetForm();
 });
+
+// retrieve info
+function getInfo() {
+  debugger;
+  let infoObj;
+  fetch(`${POST_URL}${EXT}`)
+    .then((resp) => resp.json())
+    .then((data) => {
+      infoObj = { ...data };
+
+      Object.keys(infoObj).forEach((infoId) => {
+        let info = infoObj[infoId];
+        appendNewRecord(infoId, info);
+      });
+    });
+}
 
 // read form value data
 function readFormData() {
@@ -99,11 +117,9 @@ function edit(btn) {
   if (isEdit === 'EDIT') {
     btn.innerHTML = 'save';
     InfoArr.forEach((field) => field.removeAttribute('readonly'));
-    // console.log('editing', petInfoArr);
   } else {
     btn.innerHTML = 'EDIT';
     InfoArr.forEach((field) => field.setAttribute('readonly', 'readonly'));
-    // console.log('saving start', petInfoArr);
     updatedWorkOut = {
       arms: InfoArr[0].value,
       legs: InfoArr[1].value,
@@ -119,7 +135,6 @@ function edit(btn) {
 // UPDATE FIREBASE
 function updateRecord(uuid, workout) {
   fetch(`${POST_URL}/${uuid}${EXT}`, {
-    // method: 'patch',
     method: 'put',
     headers: {
       'Content-Type': 'application/json',
