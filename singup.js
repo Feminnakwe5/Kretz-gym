@@ -15,6 +15,7 @@ signBtn.addEventListener('click', (e) => {
   let newUser = readFormData();
   let newUUID = generateUUID();
   postNewUser(newUUID, newUser);
+  resetForm();
   setTimeout(function home() {
     location.replace('/login.html');
   }, 3000);
